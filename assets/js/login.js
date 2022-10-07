@@ -61,6 +61,7 @@ $(function () {
             type: 'POST',
             data: $('#denglu').serialize(),
             success: function (res) {
+                console.log(res.token);
                 if (res.status != 0) {
                     layer.open({
                         title: '怎么回事小老弟',
@@ -71,6 +72,7 @@ $(function () {
                         title: '恭喜你',
                         content: `${res.message}`
                     });
+                    localStorage.setItem('token', res.token)
                     location.href = 'index.html'
                 }
             }

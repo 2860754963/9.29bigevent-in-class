@@ -1,0 +1,9 @@
+.layui-card {
+    padding: 20px;
+}
+
+.layui-card-header {
+    display: flex;
+    justify-content: space-between;
+
+}

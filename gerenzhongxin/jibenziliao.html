@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bigEvent-ziliao</title>
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+</head>
+
+<body style="background-color: #2b3d51;">
+    <div class="layui-card">
+        <div class="layui-card-header">基本资料</div>
+        <div class="layui-card-body">
+            <form class="layui-form" lay-filter="formuserinfo" style="padding: 20px;" id="formuserinfo">
+                <div class="layui-form-item" style="cursor: not-allowed ;">
+                    <label class="layui-form-label">用户ID</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="id" readonly autocomplete="off" class="layui-input"
+                            style="cursor:not-allowed;">
+                    </div>
+                </div>
+                <div class="layui-form-item" style="cursor:not-allowed;">
+                    <label class="layui-form-label">登录名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="username" required lay-verify="required" autocomplete="off"
+                            class="layui-input" value="" style="cursor:not-allowed;" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户昵称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="nickname" required lay-verify="required" placeholder="你还没有昵称呢~"
+                            autocomplete="off" class="layui-input" value="">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户邮箱</label>
+                    <div class="layui-input-block">
+                        <input type="email" name="email" required lay-verify="required" placeholder="你还没有邮箱呢~"
+                            autocomplete="off" class="layui-input" value="">
+                    </div>
+                </div>
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../assets/lib/jquery.js"></script>
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <script src="../assets/js/baseapi.js"></script>
+    <script src="../assets/js/index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../assets/css/文章/列表.css">
+</head>
+
+<body>
+
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <h2>文章列表</h2>
+        </div>
+        <div class="layui-card-body">
+            <form class="layui-form" id="xuanzekaung">
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <select name="suoyoufemlei" lay-verify="required">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <select name="state" lay-verify="required">
+                            <option value="已发布">已发布</option>
+                            <option value="草稿">草稿</option>
+                        </select>
+                        <!-- <script>
+                            console.log(1231231);
+                            console.log(document.querySelector('#fabu').value); 这里 通过value 可以拿到option里的值
+                        </script> -->
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo" id="shaixuan">立即筛选</button>
+
+                    </div>
+                </div>
+            </form>
+            <!-- table -->
+            <table class="layui-table">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col width="150">
+                    <col width="200">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>文章标题</th>
+                        <th>分类</th>
+                        <th>发表时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                </tbody>
+            </table>
+            <!-- 分页器 -->
+            <div id="fenyeqi"></div>
+        </div>
+    </div>
+    <!-- 所有分类的模板 -->
+    <script type="text/html" id="temp_suoyoufenlei">
+        <option value="">所有分类</option>
+            {{each data}}
+
+        <option value="{{$value.Id}}">{{$value.name}}</option>
+
+            {{/each}}
+
+
+    </script>
+    <!-- 文章列表模板 -->
+    <script type="text/html" id="temp_liebiao">
+    {{each data}}
+<tr>
+    <td>{{$value.title}}</td>
+    <td>{{$value.cate_name}}</td>
+    <td>{{$value.pub_date|formatDateTime}}</td>
+    <td>{{$value.state}}</td>
+    <td>
+        <button class="layui-btn layui-btn-sm" id="bianji" data-id="{{$value.Id}}">编辑</button>
+        <button class="layui-btn layui-btn-danger layui-btn-sm" data-id="{{$value.Id}}" id="delete">删除</button>
+    </td>
+</tr>
+    {{/each}}
+
+
+    </script>
+    <script src="../assets/lib/jquery.js"></script>
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <script src="../assets/js/baseapi.js"></script>
+    <script src="../assets/lib/template-web.js"></script>
+    <script src="../assets/js/列表.js"></script>
+</body>
+
+</html>
